@@ -1,0 +1,46 @@
+.recruitment-container {
+  background-color: #eafcff;
+  min-height: 90vh;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* left-align the heading */
+  justify-content: center;
+  gap: 40px; /* space between heading and buttons */
+  padding-left: 60px; /* space from left like in screenshot */
+}
+
+.recruitment-heading {
+  background-color: #00757e;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.location-btn {
+  background-color: #00757e;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 220px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.location-btn:hover {
+  background-color: #005f66;
+}

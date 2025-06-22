@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #eafcff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.left {
+  flex: 1;
+}
+
+.header {
+  background-color: #007078;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: fit-content;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.job-list {
+  font-weight: bold;
+  font-size: 20px;
+  color: #007078;
+}
+
+.job-item {
+  margin-bottom: 8px;
+  border-bottom: 2px solid #007078;
+  padding: 4px 0;
+}
+
+.index {
+  margin-right: 8px;
+}
+
+.right {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  background-color: #007078;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-box input,
+.form-box select {
+  padding: 6px;
+  border: 1px solid #007078;
+  border-radius: 4px;
+}
+
+.upload-btn {
+  background-color: #007078;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-format {
+  font-size: 12px;
+  color: #007078;
+  margin-top: 4px;
+}
+
+.data-table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #c2f09c;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.data-table th {
+  background-color: #e3ffd3;
+  color: #107010;
+}
