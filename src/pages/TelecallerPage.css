@@ -150,3 +150,57 @@
 .report-button:hover {
   background-color: #e0f1f1;
 }
+/* Updated Shortlist Style - Matches Screenshot */
+.shortlist-status-row {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.shortlist-status-row span {
+  margin-right: 10px;
+  color: #333;
+}
+
+.shortlist-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.shortlist-buttons button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  border: 2px solid #007e7d;
+  background-color: white;
+  color: #007e7d;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.shortlist-buttons button:hover {
+  background-color: #007e7d;
+  color: white;
+}
+
+.arrow-down {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 0;
+  color: #007e7d;
+}
+
+.schedule-info-box {
+  border: 2px solid #007e7d;
+  background-color: #f6ffff;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: -5px;
+}

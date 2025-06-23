@@ -36,6 +36,8 @@ const TelecallerPage = () => {
   const [shortlisted, setShortlisted] = useState([]);
   const [rejected, setRejected] = useState([]);
   const [scheduled, setScheduled] = useState([]);
+  const [scheduledDetails, setScheduledDetails] = useState([]);
+
   const [filters, setFilters] = useState({
     location: '',
     gender: '',
@@ -49,9 +51,21 @@ const TelecallerPage = () => {
   const handleReject = (c) => {
     if (!rejected.some(x => x.id === c.id)) setRejected([...rejected, c]);
   };
-  const handleSchedule = (c) => {
-    if (!scheduled.some(x => x.id === c.id)) setScheduled([...scheduled, c]);
-  };
+const handleSchedule = (c) => {
+  if (!scheduled.some(x => x.id === c.id)) {
+    setScheduled([...scheduled, c]);
+  }
+
+  if (scheduledDetails.includes(c.id)) {
+    // If already scheduled, remove it (toggle off)
+    setScheduledDetails(scheduledDetails.filter(id => id !== c.id));
+  } else {
+    // Otherwise, add it (toggle on)
+    setScheduledDetails([...scheduledDetails, c.id]);
+  }
+};
+
+
 
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
@@ -104,33 +118,81 @@ const TelecallerPage = () => {
           <input placeholder="Education" name="education" value={filters.education} onChange={handleFilterChange} />
         </div>
 
-        <div className="telecaller-list">
-          {filterCandidates(getCurrentList()).map(c => (
-            <div key={c.id} className="candidate-card">
-              <div className="candidate-header">
-                <strong>{c.name}</strong> <span className="view-resume">View Resume</span>
-              </div>
-              <div className="candidate-details">
-                <div>Contact No - {c.contact}</div>
-                <div>Mail - {c.mail}</div>
-                <div>Experience - {c.experience}</div>
-                <div>Gender - {c.gender}</div>
-                <div>Current/Previous Company - {c.company}</div>
-                <div>Current Package - {c.package}</div>
-                <div>City - {c.city}</div>
-                <div>Home Town - {c.hometown}</div>
-                <div>Education - {c.education}</div>
-              </div>
-              {tab === 'all' && (
-                <div className="candidate-actions">
-                  <button onClick={() => handleShortlist(c)}>Shortlist</button>
-                  <button onClick={() => handleReject(c)}>Reject</button>
-                  <button onClick={() => handleSchedule(c)}>Schedule Interview</button>
-                </div>
-              )}
-            </div>
-          ))}
+       <div className="telecaller-list">
+  {filterCandidates(getCurrentList()).map(c => (
+    <div key={c.id} className="candidate-card">
+      <div className="candidate-header">
+        <strong>{c.name}</strong> <span className="view-resume">View Resume</span>
+      </div>
+      <div className="candidate-details">
+        <div>Contact No - {c.contact}</div>
+        <div>Mail - <a href={`mailto:${c.mail}`} className="email-link">{c.mail}</a></div>
+        <div>Experience - {c.experience}</div>
+        <div>Gender - {c.gender}</div>
+        <div>Current/Previous Company - {c.company}</div>
+        <div>Current Package - {c.package}</div>
+        <div>City - {c.city}</div>
+        <div>Home Town - {c.hometown}</div>
+        <div>Education - {c.education}</div>
+      </div>
+
+      {tab === 'all' && (
+        <div className="candidate-actions">
+          <button onClick={() => handleShortlist(c)}>Shortlist</button>
+          <button onClick={() => handleReject(c)}>Reject</button>
+          <button onClick={() => handleSchedule(c)}>Schedule Interview</button>
         </div>
+      )}
+
+      {/* {tab === 'shortlisted' && (
+  <>
+    <div className="shortlist-status-row">
+      <span>Status :</span>
+      <div className="shortlist-buttons">
+        <button onClick={() => handleSchedule(c)}>Interview Scheduled</button>
+        <button>Job Offered</button>
+        <button onClick={() => handleReject(c)}>Reject</button>
+      </div>
+    </div>
+
+    <div className="arrow-down">↓</div>
+
+    <div className="schedule-info-box">
+      <div><strong>Date :</strong> ____________</div>
+      <div><strong>Time :</strong> ____________</div>
+      <div><strong>Remark :</strong> ____________</div>
+    </div>
+  </>
+)} */}
+{tab === 'shortlisted' && (
+  <>
+    <div className="shortlist-status-row">
+      <span>Status :</span>
+      <div className="shortlist-buttons">
+        <button onClick={() => handleSchedule(c)}>Interview Scheduled</button>
+        <button>Job Offered</button>
+        <button onClick={() => handleReject(c)}>Reject</button>
+      </div>
+    </div>
+
+    {scheduledDetails.includes(c.id) && (
+      <>
+        <div className="arrow-down">↓</div>
+        <div className="schedule-info-box">
+          <div><strong>Date :</strong> ____________</div>
+          <div><strong>Time :</strong> ____________</div>
+          <div><strong>Remark :</strong> ____________</div>
+        </div>
+      </>
+    )}
+  </>
+)}
+
+
+    </div>
+  ))}
+</div>
+
       </div>
     </div>
   );
