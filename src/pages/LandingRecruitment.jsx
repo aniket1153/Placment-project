@@ -6,7 +6,7 @@ const LandingRecruitment = () => {
   const navigate = useNavigate();
 
   const handleClickAnywhere = () => {
-    navigate('/recruitment-menu'); // route to the new component
+    navigate('/recruitment-menu');
   };
 
   return (

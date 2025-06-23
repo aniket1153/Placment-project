@@ -1,0 +1,137 @@
+/* Base Wrapper */
+.report-wrapper {
+  background: #eef7fa;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Title Box */
+.report-title {
+  background-color: #006d6f;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+/* Section Block */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #004f50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.calendar-icon {
+  font-size: 1.1rem;
+  color: red;
+  margin-top: 2px;
+}
+
+/* Cards Layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Individual Card */
+.card {
+  background-color: #006d6f;
+  color: white;
+  padding: 1.5rem 0.8rem;
+  border-radius: 0 0 14px 14px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.card-label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Tablet Screens */
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .report-wrapper {
+    padding: 1.5rem;
+  }
+
+  .report-title {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .section-heading {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    padding: 1.5rem 5rem;
+  }
+
+  .card-number {
+    font-size: 1.8rem;
+  }
+
+  .card-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .report-wrapper {
+    padding: 1rem;
+  }
+
+  .report-title {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .section-heading {
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card-number {
+    font-size: 1.6rem;
+  }
+}

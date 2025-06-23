@@ -1,0 +1,177 @@
+/* Wrapper Layout */
+.dashboard-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background: #eef7fa;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 96%;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: 81vh;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.left-panel {
+  width: 60%;
+  min-width: 280px;
+}
+
+/* Right Section */
+.right-panel {
+  width: 35%;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Header Title */
+.title {
+  background: #006d6f;
+  color: white;
+  padding: 0.6rem;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Job List Styles */
+.job-list {
+  list-style: none;
+  padding: 0;
+}
+
+.job-item {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #006d6f;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #006d6f;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.job-item:hover {
+  background-color: #dff2f2;
+}
+
+/* Buttons */
+.btn {
+  background: #006d6f;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Input and Dropdown Container */
+.input-box,
+.dropdown-box {
+  border: 1px solid #006d6f;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Labels */
+.input-box label,
+.dropdown-box label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+/* Inputs and Select */
+.input-box input,
+.dropdown-box select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* File Upload Area */
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.upload-btn {
+  background: #006d6f;
+  color: white;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.file-hint {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #006d6f;
+  text-align: center;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .job-item {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .upload-box {
+    width: 100%;
+    align-items: center;
+  }
+
+  .input-box,
+  .dropdown-box {
+    padding: 0.8rem;
+  }
+
+  .input-box input,
+  .dropdown-box select {
+    font-size: 0.95rem;
+  }
+}

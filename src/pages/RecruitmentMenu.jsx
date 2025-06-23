@@ -10,7 +10,7 @@ const RecruitmentMenu = () => {
       <div className="recruitment-heading">Recruitment</div>
       <div className="button-group">
         <button className="location-btn" onClick={() => navigate('/job-posts')}>Job Posts</button>
-        <button className="location-btn">Scheduled Interviews</button>
+        <button className="location-btn" >Scheduled Interviews</button>
         <button className="location-btn">Offers</button>
         <button className="location-btn">Report</button>
       </div>
